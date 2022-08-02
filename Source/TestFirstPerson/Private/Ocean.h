@@ -14,24 +14,7 @@ class AOcean : public AStaticMeshActor
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(EditAnywhere)
-	float Scale;
-
-	UPROPERTY(EditAnywhere)
-	UMaterial* Material;
-
 	void PostInitializeComponents() override;
 
 	void BeginPlay() override;
-
-#if WITH_EDITOR
-	void PostLoad() override;
-
-	void PostEditChangeProperty(FPropertyChangedEvent& PropertyChangedEvent) override;
-#endif // WITH_EDITOR
-
-private:
-	UMaterialInstanceDynamic* dynMaterial;
-	UStaticMeshComponent* plane;
-
 };
